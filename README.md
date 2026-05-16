@@ -76,3 +76,5 @@ client-a-server-f-files/
 - **Изоляция пользователей**: все запросы фильтруются по `owner_id` из JWT
 - **Хранилище**: файлы лежат в `STORAGE_DIR` как `{owner_id}/{uuid}-{filename}`
 
+<img width="521" height="640" alt="123" src="https://github.com/user-attachments/assets/5a6128d9-a419-4058-a222-aea92532c628" />
+
