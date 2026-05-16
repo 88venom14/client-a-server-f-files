@@ -1,0 +1,103 @@
+.preview-pane {
+  border-left: 2px solid var(--window-edge);
+  background: var(--panel-2);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.preview-pane .pp-header {
+  padding: 10px 12px;
+  border-bottom: 2px solid var(--window-edge);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: var(--orange);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.preview-pane .pp-close {
+  display: none;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  background: var(--red);
+  color: #fff;
+  border: 2px solid var(--window-edge);
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .preview-pane .pp-close { display: inline-flex; align-items: center; justify-content: center; }
+}
+
+.preview-pane .pp-body {
+  flex: 1;
+  overflow: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.preview-pane .pp-body img,
+.preview-pane .pp-body video { max-width: 100%; max-height: 240px; }
+
+.preview-pane .pp-body audio { width: 100%; }
+
+.preview-pane .pp-body iframe {
+  width: 100%;
+  height: 320px;
+  border: 0;
+  background: #fff;
+}
+
+.preview-pane .pp-body pre {
+  width: 100%;
+  max-height: 260px;
+  overflow: auto;
+  background: #0d0d0d;
+  color: #cfcabe;
+  padding: 8px;
+  font-family: "VT323", monospace;
+  font-size: 13px;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+.preview-pane .pp-meta {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 4px 8px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  color: var(--text);
+}
+
+.preview-pane .pp-meta .k { color: var(--orange); }
+.preview-pane .pp-meta .v { word-break: break-all; }
+
+.preview-pane .pp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 10px 12px;
+  border-top: 2px solid var(--window-edge);
+}
+
+.preview-pane .pp-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-muted);
+}

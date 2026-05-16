@@ -1,0 +1,18 @@
+:root {
+  --bg-page: #c4c2bf;
+  --bg-page-2: #b6b4b1;
+  --orange: #ed7e2a;
+  --orange-bright: #ffa040;
+  --orange-deep: #b8541a;
+  --window: #3a3a3a;
+  --window-edge: #1f1f1f;
+  --panel: #2a2a2a;
+  --panel-2: #232323;
+  --row-hl: #4a3220;
+  --row-hl-edge: #ff9c46;
+  --text: #f4f0e8;
+  --text-muted: #b6b1a6;
+  --green: #4ec044;
+  --red: #d23a2a;
+  --red-dark: #7a1a14;
+}

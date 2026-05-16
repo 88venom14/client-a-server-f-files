@@ -1,0 +1,235 @@
+.mobile-only      { display: none; }
+.mobile-menu-btn  { display: none; }
+.sidebar-backdrop { display: none; }
+
+@media (max-width: 768px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .app-shell > .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 220px;
+    z-index: 200;
+    transform: translateX(-110%);
+    transition: transform 200ms ease-out;
+    border-radius: 0;
+    border-right-width: 4px;
+    box-shadow: 4px 0 0 rgba(0, 0, 0, .35);
+  }
+
+  .app-shell.menu-open > .sidebar {
+    transform: translateX(0);
+  }
+
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .55);
+    z-index: 150;
+  }
+
+  .app-shell.menu-open .sidebar-backdrop {
+    display: block;
+  }
+
+  .mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    background: transparent;
+    border: 2px solid var(--orange);
+    color: var(--orange);
+    font-family: "Press Start 2P", monospace;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .app-topbar {
+    padding: 6px 10px;
+    gap: 8px;
+  }
+
+  .app-topbar .brand { font-size: 11px; letter-spacing: 1px; }
+  .app-topbar .email { display: none; }
+
+  .explorer {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto minmax(0, 1fr);
+  }
+
+  .explorer > .preview-pane {
+    position: fixed;
+    inset: auto 0 0 0;
+    height: 65vh;
+    z-index: 100;
+    grid-column: 1 / -1;
+    grid-row: auto;
+    border-left: 0;
+    border-top: 4px solid var(--orange);
+    transform: translateY(100%);
+    transition: transform 200ms ease-out;
+  }
+
+  .explorer.preview-open > .preview-pane {
+    transform: translateY(0);
+  }
+
+  .preview-pane .pp-close {
+    display: inline-flex;
+    margin-left: auto;
+  }
+
+  .breadcrumbs {
+    padding: 6px 10px;
+    font-size: 9px;
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .breadcrumbs .crumb { flex-shrink: 0; }
+
+  .explorer-toolbar {
+    padding: 8px 10px;
+    gap: 6px;
+  }
+
+  .explorer-toolbar .search { flex: 1 1 100%; max-width: none; }
+  .explorer-toolbar .rename-input { min-width: 0; flex: 1 1 calc(50% - 4px); }
+  .explorer-toolbar .btn-pixel {
+    flex: 0 0 auto;
+    padding: 8px 10px 10px;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .explorer-body {
+    padding: 8px 10px;
+  }
+
+  .explorer-body .row {
+    grid-template-columns: 22px minmax(0, 1fr) 60px;
+    column-gap: 8px;
+    padding: 9px 6px;
+  }
+
+  .explorer-body .row .date { display: none; }
+  .explorer-body .row .size { font-size: 9px; }
+
+  .row-action {
+    padding: 6px 8px;
+    font-size: 8px;
+  }
+
+  .grid-view {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .grid-card { padding: 8px; }
+  .grid-card .ico { width: 48px; height: 48px; }
+
+  .modal-window {
+    min-width: 0;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100vh;
+    border-width: 4px;
+  }
+
+  .modal-backdrop {
+    padding: 8px;
+    align-items: flex-end;
+  }
+
+  .modal-titlebar { font-size: 10px; letter-spacing: 1.5px; padding: 8px 12px; }
+  .modal-body { padding: 14px 16px; }
+  .modal-actions { padding: 10px 12px; flex-wrap: wrap; }
+
+  .info-modal-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .info-modal-layout .viewer-frame {
+    width: 100%;
+    min-height: 160px;
+  }
+
+  .auth-card {
+    max-width: 100%;
+    padding: 18px 16px;
+  }
+
+  .upload-tray {
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    width: auto;
+    max-height: 40vh;
+  }
+
+  .toast {
+    bottom: 16px;
+    font-size: 9px;
+    padding: 10px 14px;
+    max-width: calc(100% - 32px);
+  }
+
+  .settings-page {
+    padding: 14px;
+  }
+
+  .settings-page .kv-grid {
+    grid-template-columns: 110px 1fr;
+    font-size: 9px;
+    gap: 6px 10px;
+  }
+
+  .empty-state {
+    padding: 24px 12px;
+    min-height: 180px;
+  }
+
+  .empty-state .ico { width: 72px; height: 72px; }
+}
+
+@media (max-width: 480px) {
+  .explorer-toolbar .rename-input { flex: 1 1 100%; }
+  .explorer-toolbar .btn-pixel { flex: 1 1 calc(50% - 4px); }
+
+  .breadcrumbs { font-size: 8px; }
+
+  .grid-view {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .auth-card .panel-title { font-size: 12px; letter-spacing: 1.5px; }
+
+  .modal-titlebar .tb-dot { display: none; }
+}
+
+@media (hover: none) {
+  .btn-pixel, .row-action, .tool, .mobile-menu-btn {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  input, select, textarea, button {
+    font-size: 16px;
+  }
+
+  .rename-input,
+  .add-input {
+    font-size: 14px;
+    padding: 12px;
+  }
+}

@@ -1,0 +1,78 @@
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #fff;
+  border: 2px solid var(--orange);
+  padding: 12px 18px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  z-index: 200;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 150ms steps(2), transform 150ms steps(2);
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}
+
+.toast.ok  { border-color: var(--green); }
+.toast.err { border-color: var(--red); color: #ffb0a8; }
+
+.upload-tray {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  width: 320px;
+  max-height: 50vh;
+  overflow: auto;
+  padding: 12px;
+  background: var(--window);
+  border: 2px solid var(--orange);
+  border-radius: 2px;
+  box-shadow: 3px 3px 0 rgba(0,0,0,.3);
+  font-size: 10px;
+  letter-spacing: 1px;
+  z-index: 50;
+}
+
+.upload-tray header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  color: var(--orange);
+}
+
+.upload-tray .item { margin-bottom: 8px; }
+
+.upload-tray .item .name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.upload-tray .bar {
+  height: 5px;
+  background: rgba(0,0,0,.4);
+  margin-top: 4px;
+}
+
+.upload-tray .bar > div {
+  height: 100%;
+  background: var(--orange);
+}
+
+.upload-tray .bar.err > div { background: var(--red); }
+
+.upload-tray .status {
+  color: var(--text-muted);
+  font-size: 9px;
+  margin-top: 2px;
+}

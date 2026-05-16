@@ -1,0 +1,36 @@
+.auth-screen {
+  flex: 1;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: var(--bg-page);
+  background-image: radial-gradient(rgba(0,0,0,.06) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.auth-card .panel-title  { margin-bottom: 6px; text-align: center; }
+.auth-card .form-label   { margin-top: 6px; }
+.auth-card .rename-input { width: 100%; box-sizing: border-box; }
+.auth-card .btn-pixel    { width: 100%; justify-content: center; }
+
+.auth-links {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  margin-top: 4px;
+}
+
+.auth-links a { color: var(--text); text-decoration: none; }
+.auth-links a:hover { color: var(--orange-bright); }

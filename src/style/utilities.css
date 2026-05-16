@@ -1,0 +1,267 @@
+.center-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  color: var(--text);
+  text-align: center;
+}
+
+.center-screen .error-title {
+  color: var(--orange);
+  font-size: 14px;
+  margin: 0;
+}
+
+.center-screen pre {
+  max-width: 600px;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: #ffb0a8;
+  font-size: 10px;
+  font-family: "VT323", monospace;
+}
+
+.form-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-stack .btn-pixel {
+  margin-top: 8px;
+}
+
+.form-error {
+  margin-top: 6px;
+  font-family: "VT323", monospace;
+  font-size: 14px;
+  color: #ffb0a8;
+  letter-spacing: 0.5px;
+}
+
+.route-fallback {
+  flex: 1;
+  background: var(--panel);
+  min-height: 0;
+}
+
+.skeleton-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+}
+
+.skeleton-row {
+  height: 32px;
+  width: 100%;
+  background: rgba(58, 58, 58, .25);
+  border-radius: 2px;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% { opacity: .6; }
+  50%      { opacity: 1; }
+}
+
+.settings-page {
+  padding: 24px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  color: var(--text);
+}
+
+.settings-page .kv-grid {
+  max-width: 520px;
+}
+
+.info-modal-layout {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.info-modal-layout .kv-grid {
+  flex: 1;
+  min-width: 0;
+}
+
+.kv-grid .v { word-break: break-all; }
+
+.breadcrumbs .crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rename-current {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  margin: 4px 0 8px;
+  opacity: .7;
+  word-break: break-all;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-topbar .brand {
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--orange);
+}
+
+.share-card {
+  max-width: 460px;
+  align-items: center;
+}
+
+.share-card .panel-title { text-align: center; }
+
+.share-icon {
+  width: 96px;
+  height: 96px;
+  margin: 12px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-icon .ico { width: 100%; height: 100%; }
+
+.share-info {
+  text-align: center;
+  width: 100%;
+}
+
+.share-name {
+  font-family: "Press Start 2P", monospace;
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  color: var(--orange-bright);
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+
+.share-meta {
+  font-family: "VT323", monospace;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.share-folder-card {
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.share-folder-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 0 8px;
+  border-bottom: 2px dashed var(--window-edge);
+}
+
+.share-folder-icon {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.share-folder-icon .ico { width: 100%; height: 100%; }
+
+.share-folder-zip {
+  align-self: flex-start;
+}
+
+.share-folder-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 50vh;
+  overflow-y: auto;
+  background: var(--panel-2);
+  border: 2px solid #0d0d0d;
+  border-radius: 2px;
+  padding: 6px;
+}
+
+.share-folder-item {
+  display: grid;
+  grid-template-columns: 22px minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 8px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 10px;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  transition: background 60ms;
+}
+
+.share-folder-item .ico { width: 18px; height: 18px; }
+.share-folder-item .ico svg { width: 100%; height: 100%; }
+
+.share-folder-item .path {
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.share-folder-item .size {
+  font-family: "VT323", monospace;
+  font-size: 14px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.share-folder-item:hover {
+  background: #1f1f1f;
+  color: var(--orange-bright);
+}
+
+.share-folder-empty {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-family: "VT323", monospace;
+  font-size: 16px;
+}
+
+.row-folder-actions,
+.card-folder-actions {
+  display: flex;
+  gap: 4px;
+  justify-self: end;
+}
+
+.card-folder-actions {
+  margin-top: 4px;
+  justify-self: center;
+}
+
+@media (max-width: 768px) {
+  .share-folder-card { padding: 16px 14px; }
+  .share-folder-header { flex-direction: column; align-items: center; text-align: center; gap: 8px; }
+  .share-folder-zip { align-self: stretch; text-align: center; }
+  .share-folder-item { font-size: 9px; padding: 10px 8px; }
+}

@@ -1,0 +1,202 @@
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(8,6,3,.74);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 40px 24px;
+}
+
+.modal-backdrop.show {
+  display: flex;
+}
+
+.modal-window {
+  position: relative;
+  background: var(--panel);
+  border: 5px solid var(--orange);
+  box-shadow: 6px 6px 0 rgba(0,0,0,.4);
+  min-width: 520px;
+  max-width: 760px;
+  width: 100%;
+  max-height: 86vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-titlebar {
+  background: var(--orange);
+  border-bottom: 3px solid var(--window-edge);
+  color: #1a1a1a;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+}
+
+.modal-titlebar .tb-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-titlebar .tb-dot {
+  width: 10px;
+  height: 10px;
+  background: #1a1a1a;
+  box-shadow: 14px 0 0 #1a1a1a, 28px 0 0 #1a1a1a;
+}
+
+.modal-close {
+  width: 24px;
+  height: 24px;
+  background: var(--red);
+  border: 2px solid #1a1a1a;
+  color: #fff;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  cursor: pointer;
+  box-shadow: inset 0 -2px 0 var(--red-dark);
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close:active { transform: translateY(1px); }
+
+.modal-body {
+  padding: 20px 22px;
+  overflow: auto;
+  color: var(--text);
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 14px 18px;
+  border-top: 2px solid var(--window-edge);
+  background: var(--panel-2);
+}
+
+body.modal-open { overflow: hidden; }
+
+.btn-pixel {
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  color: #fff;
+  background: var(--orange);
+  border: 2px solid #1a1a1a;
+  padding: 10px 14px 12px;
+  cursor: pointer;
+  text-shadow: 1px 1px 0 #6a2c0a;
+  box-shadow: inset 0 -3px 0 var(--orange-deep), 0 3px 0 #111;
+  transition: transform 80ms steps(2);
+}
+
+.btn-pixel:active {
+  transform: translateY(2px);
+  box-shadow: inset 0 -1px 0 var(--orange-deep), 0 1px 0 #111;
+}
+
+.btn-pixel.ghost {
+  background: #555;
+  box-shadow: inset 0 -3px 0 #222, 0 3px 0 #111;
+  text-shadow: 1px 1px 0 #000;
+}
+
+.btn-pixel.danger {
+  background: var(--red);
+  box-shadow: inset 0 -3px 0 var(--red-dark), 0 3px 0 #111;
+  text-shadow: 1px 1px 0 var(--red-dark);
+}
+
+.rename-input,
+.add-input {
+  width: 100%;
+  background: #0d0d0d;
+  color: #ffd7a8;
+  border: 2px solid #0a0a0a;
+  box-shadow: inset 0 0 0 1px #2a2a2a;
+  padding: 14px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 12px;
+  letter-spacing: 2px;
+  outline: none;
+  margin-top: 6px;
+}
+
+.rename-input:focus,
+.add-input:focus {
+  box-shadow: inset 0 0 0 2px var(--orange-bright);
+}
+
+.form-label {
+  display: block;
+  font-family: "Press Start 2P", monospace;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-top: 14px;
+}
+
+.kv-grid {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px 16px;
+  font-family: "Press Start 2P", monospace;
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  line-height: 1.6;
+  align-items: center;
+}
+
+.kv-grid .k { color: var(--text-muted); }
+
+.kv-grid .v {
+  color: #ffd7a8;
+  word-break: break-all;
+}
+
+.kv-grid .v.mono {
+  font-family: "VT323", monospace;
+  font-size: 18px;
+  color: #cfe9ff;
+  letter-spacing: 1px;
+}
+
+.viewer-frame {
+  background: #d6d2c4;
+  border: 3px solid #0a0a0a;
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+.text-viewer {
+  background: #0d0d0d;
+  border: 2px solid #0a0a0a;
+  padding: 14px 16px;
+  font-family: "VT323", monospace;
+  font-size: 20px;
+  color: #b8f0a0;
+  white-space: pre;
+  overflow: auto;
+  min-height: 240px;
+  max-height: 360px;
+  line-height: 1.25;
+}
+
+.text-viewer.hex {
+  color: #88c8ff;
+  font-size: 18px;
+}
